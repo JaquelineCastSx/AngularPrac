@@ -1,0 +1,30 @@
+.sidebar {
+  padding: 20px;
+}
+.widget {
+  margin-bottom: 30px;
+}
+.widget-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.latest-news li {
+  margin-bottom: 20px;
+}
+.latest-news a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #000;
+}
+.latest-news img {
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+  border-radius: 5px;
+}
+.latest-news h3 {
+  font-size: 16px;
+  margin: 0;
+}

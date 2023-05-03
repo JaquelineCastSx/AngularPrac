@@ -1,0 +1,10 @@
+<div class="sidebar">
+  <div class="widget latest-news">
+    <h2 class="widget-title">Últimas noticias</h2>
+    <ul>
+      <li *ngFor="let article of this.articles">
+        <app-c-sidebar-news-item [article]="article" ></app-c-sidebar-news-item>
+      </li>
+    </ul>
+  </div>
+</div>

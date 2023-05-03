@@ -1,0 +1,62 @@
+<div class="container">
+
+  <div class="score-board" *ngIf="showScoreBoard">
+    <h3>Score</h3>
+    <div
+      class="score-row"
+      *ngFor="let winner of this.winnersBoard; let i = index">
+      <div>{{ i + 1 }}</div>
+      <div>Jugador {{ winner.player }}</div>
+      <div>{{ winner.date | date : 'dd/MM/YYYY' }}</div>
+    </div>
+    <div class="action" (click)="this.showScoreBoard = false">
+      <a>Cerrar</a>
+    </div>
+  </div>
+
+  <ng-container *ngIf="!showScoreBoard">
+    <div class="tie-banner" *ngIf="this.gameStatus == 'tie'">
+      <p>!Empate¡</p>
+      <button (click)="this.newGame()">Volver a jugar</button>
+
+      <div class="action" (click)="this.showScoreBoard = true">
+        <a>Mostrar resultados</a>
+      </div>
+    </div>
+
+    <div class="winner-banner" *ngIf="this.gameStatus === 'win'">
+      <p>!El jugador {{ this.playerWinner }} es el ganador¡</p>
+      <button (click)="this.newGame()">Volver a jugar</button>
+
+      <div class="action" (click)="this.showScoreBoard = true">
+        <a>Mostrar resultados</a>
+      </div>
+    </div>
+
+    <div *ngIf="this.gameStatus === 'play'" class="player-text">
+      Turno:
+      <em
+        ngClass="{
+      'actual-player-1': this.player === 1,
+      'actual-player-2': this.player === 2
+    }"
+        >Jugador {{ this.player }}</em
+      >
+    </div>
+
+    <div class="container-grid">
+      <!--Angular: 3 directivas, componentes, atributos y funcionalidad-->
+      <div
+        class="cell"
+        *ngFor="let cell of this.board; let i = index"
+        [ngClass]="{
+          player1: this.board[i] === 1,
+          player2: this.board[i] === 2,
+          placed: this.board[i] != 0
+        }"
+        (click)="this.selectedCell(i, this.player)"
+      ></div>
+    </div>
+  </ng-container>
+
+</div>

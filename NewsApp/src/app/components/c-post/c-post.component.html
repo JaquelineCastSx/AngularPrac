@@ -1,0 +1,12 @@
+<div class="post">
+  <div class="post-image">
+    <img [src]="article?.imageUrl" alt="">
+  </div>
+
+  <div class="post-component">
+    <h2 class="post-title">{{article?.title}}</h2>
+    <p class="post-meta"> {{article?.newsSite}} </p>
+    <p class="post-description"> {{article?.summary}} </p>
+    <a [routerLink]="['/news', article?.id]" class="post-read-more">Leer más</a>
+  </div>
+</div>

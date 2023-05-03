@@ -1,0 +1,59 @@
+.l-container {
+  @apply flex
+  flex-col
+  items-center
+  justify-center
+  bg-blue-100
+  w-screen
+  h-screen;
+}
+.l-question {
+  @apply max-w-xl
+  p-4
+  rounded;
+}
+.l-text-title {
+  @apply text-4xl font-bold text-indigo-300 mb-5;
+
+  b {
+    @apply text-lg block text-violet-400;
+  }
+}
+.l-answers {
+  @apply flex flex-col items-start w-full;
+}
+.l-answer-option {
+  @apply flex flex-col items-start bg-white
+  shadow
+  rounded-lg
+  p-4
+  w-full
+  m-4
+  transition-all
+  ease-in-out
+  cursor-pointer;
+}
+.l-answer-option:hover:not(.l-correct, .l-error) {
+  //Not() para cuando queremos que sea en los que no tengan ciertas clases
+  @apply bg-blue-500 text-cyan-50;
+}
+.l-correct {
+  @apply bg-green-400 text-green-900;
+}
+.l-error {
+  @apply bg-red-400 text-red-900;
+}
+.l-button{
+  @apply
+  bg-indigo-300
+  text-white
+  px-4
+  py-2
+  rounded-lg
+  shadow-md
+  transition-all
+  duration-300
+  ease-in-out
+  cursor-pointer
+  hover:bg-purple-700;
+}
