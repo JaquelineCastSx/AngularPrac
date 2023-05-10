@@ -35,7 +35,7 @@
   ></app-c-swap>
 
   <p class="l-label">
-    {{ this.amount }} {{ this.fromCurrency }} = {{ this.convertedAmount }}
+    {{ this.amount }} {{ this.fromCurrency }} = {{ this.convertedAmount | currency:'USD':'symbol':'1.2-5' }}
     {{ this.toCurrency }}
   </p>
 </div>
