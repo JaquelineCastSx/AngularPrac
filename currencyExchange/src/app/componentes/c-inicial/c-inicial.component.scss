@@ -1,17 +1,49 @@
+$border-radius-size: 14px;
+
 .l-label{
-margin: 36px;
+margin-left: auto;
+margin-right: auto;
+margin-top: 22px;
 align-self: center;
 justify-content: center;
 }
 .l-input{
   width: 200px;
-  height: 25px;
+  height: 28px;
   font-size: 22px;
   margin: 10px;
+  align-self: center;
+justify-content: center;
 }
 .l-container{
-  display: flex;
-  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
+  height: 500px;
+  align-self: center;
+  text-align: center;
+  background: white;
+  display: grid;
+  border-radius: $border-radius-size + 5;
+  box-shadow: -1px 15px 30px -12px black;
+  z-index: 9999;
+  top: 100px;
+}
+.l-button{
+  width: 120px;
+  height: 60px;
+}
+.l-box{
+  margin: auto;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+  display: flexbox;
   align-items: center;
+  flex-direction: column;
+}
+.l-title{
+  text-align: center;
+  align-content: center;
   justify-content: center;
 }

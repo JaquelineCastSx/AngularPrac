@@ -1,0 +1,66 @@
+$btn-padding: 16px !default;
+$btn-font-size: 14px !default;
+$btn-border-radius: 4px !default;
+$btn-border-width: 1px !default;
+
+$btn-hover-color: #EEEEEE !default;
+
+$btn-info-color: #0097A7 !default;
+
+@mixin button-color($color, $background, $color-on-hover: $btn-hover-color) {
+  color: $color;
+  border: $btn-border-width solid $background;
+
+  &:before {
+     background: $background;
+  }
+
+	&:hover,
+  &:active,
+  &:focus {
+    background-color: $background;
+		color: $color-on-hover;
+	}
+}
+
+.btn {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  background: transparent;
+  width: 50px;
+  height: 50px;
+  z-index: 1;
+  outline: 0;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+  font-size: $btn-font-size;
+  border-radius: $btn-border-radius;
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 100%;
+    top: 0;
+    z-index: -1;
+    transition: right 0.2s ease-in-out;
+  }
+
+  &:hover:before,
+  &:active:before,
+  &:focus:before {
+    right: 0;
+  }
+}
+.info-btn {
+  @include button-color($btn-info-color, $btn-info-color);
+}
+
+img{
+  width: 40px;
+  height: 40px;
+}

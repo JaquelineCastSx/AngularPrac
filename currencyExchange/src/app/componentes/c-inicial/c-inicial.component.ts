@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
 import { ICurrency } from 'src/app/interfaces/money.interface';
 import { MoneyService } from 'src/app/servicio/money.service';
-import { Injectable } from '@angular/core';
-@Injectable({
-  providedIn: 'root'
-})
+
 @Component({
   selector: 'app-c-inicial',
   templateUrl: './c-inicial.component.html',
@@ -46,8 +43,10 @@ export class CInicialComponent {
     console.log(this.toCurrency);
     console.log(toCurrencyObj);
 
-    const exchangeRate = fromCurrencyObj.unit / toCurrencyObj.unit;
-    this.convertedAmount = this.amount * exchangeRate;
+    if (fromCurrencyObj && toCurrencyObj) { //Verifica que los 2 tengan unidades seleccioandas
+      const exchangeRate = fromCurrencyObj.unit / toCurrencyObj.unit;
+      this.convertedAmount = this.amount * exchangeRate;
+    }
   }
 
   swapCurrencies(): void {
