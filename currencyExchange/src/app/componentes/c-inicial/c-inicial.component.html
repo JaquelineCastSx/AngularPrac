@@ -1,0 +1,18 @@
+<div class="l-container">
+  <label class="l-label" for="in">Convertir de: </label>
+  <select class="l-input" [(ngModel)]="fromCurrency" (change)="convertCurrency()">
+    <option *ngFor="let currency of this.datos" [value]="currency.currency">{{ currency.currency }}</option>
+  </select>
+<br>
+  <label class="l-label" for="in">la cantidad de </label>
+  <input class="l-input" type="number" [(ngModel)] ="amount" (change)="convertCurrency()">
+<br>
+  <label class="l-label" for="in">a: </label>
+<select class="l-input" [(ngModel)]="toCurrency" (change)="convertCurrency()">
+  <option *ngFor="let currency of this.datos" [value]="currency.currency">{{ currency.currency }}</option>
+</select>
+
+  <p class="l-label">{{ this.amount }} {{ this.fromCurrency }} = {{ this.convertedAmount }} {{ this.toCurrency }}</p>
+</div>
+
+
